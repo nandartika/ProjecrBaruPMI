@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2019 3:13:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.application.entity.TFormulir" table="t_formulir" catalog="_donordarah" optimistic-lock="version">
+        <id name="FIdForm" type="java.lang.Integer">
+            <column name="f_id_form" />
+            <generator class="identity" />
+        </id>
+        <property name="FIdLokasi" type="int">
+            <column name="f_id_lokasi" not-null="true" />
+        </property>
+        <property name="FKodedonor" type="int">
+            <column name="f_kodedonor" not-null="true" />
+        </property>
+        <property name="FNoKtp" type="int">
+            <column name="f_no_ktp" not-null="true" />
+        </property>
+        <property name="FNama" type="string">
+            <column name="f_nama" length="100" not-null="true" />
+        </property>
+        <property name="FAlamat" type="string">
+            <column name="f_alamat" length="65535" not-null="true" />
+        </property>
+        <property name="FKelurahan" type="string">
+            <column name="f_kelurahan" length="100" not-null="true" />
+        </property>
+        <property name="FKecamatan" type="string">
+            <column name="f_kecamatan" length="100" not-null="true" />
+        </property>
+        <property name="FKodepos" type="int">
+            <column name="f_kodepos" not-null="true" />
+        </property>
+        <property name="FJkelamin" type="string">
+            <column name="f_jkelamin" length="100" not-null="true" />
+        </property>
+        <property name="FTempatLahir" type="string">
+            <column name="f_tempat_lahir" length="100" not-null="true" />
+        </property>
+        <property name="FTglLahir" type="date">
+            <column name="f_tgl_lahir" length="10" not-null="true" />
+        </property>
+        <property name="FPekerjaan" type="string">
+            <column name="f_pekerjaan" length="100" not-null="true" />
+        </property>
+        <property name="FNamaibu" type="string">
+            <column name="f_namaibu" length="100" not-null="true" />
+        </property>
+        <property name="FStatusNikah" type="string">
+            <column name="f_status_nikah" length="100" not-null="true" />
+        </property>
+        <property name="FGoldarah" type="string">
+            <column name="f_goldarah" length="100" not-null="true" />
+        </property>
+        <property name="FRhesus" type="string">
+            <column name="f_rhesus" length="100" not-null="true" />
+        </property>
+        <property name="FDipanggil" type="string">
+            <column name="f_dipanggil" length="100" not-null="true" />
+        </property>
+        <property name="FNohp" type="int">
+            <column name="f_nohp" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

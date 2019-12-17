@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2019 3:13:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.application.entity.TArtikel" table="t_artikel" catalog="_donordarah" optimistic-lock="version">
+        <id name="FIdArtikel" type="java.lang.Integer">
+            <column name="f_id_artikel" />
+            <generator class="identity" />
+        </id>
+        <property name="FLinkImg" type="string">
+            <column name="f_link_img" length="100" not-null="true" />
+        </property>
+        <property name="FJudul" type="string">
+            <column name="f_judul" length="25" not-null="true" />
+        </property>
+        <property name="FKonten" type="string">
+            <column name="f_konten" length="65535" not-null="true" />
+        </property>
+        <property name="FTglKegiatan" type="date">
+            <column name="f_tgl_kegiatan" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

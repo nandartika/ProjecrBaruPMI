@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2019 3:13:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.application.entity.TLokasi" table="t_lokasi" catalog="_donordarah" optimistic-lock="version">
+        <id name="FIdLokasi" type="int">
+            <column name="f_id_lokasi" />
+            <generator class="assigned" />
+        </id>
+        <property name="FNamaTempat" type="string">
+            <column name="f_nama_tempat" length="30" not-null="true" />
+        </property>
+        <property name="FIdProvinsi" type="int">
+            <column name="f_id_provinsi" not-null="true" />
+        </property>
+        <property name="FIdKota" type="int">
+            <column name="f_id_kota" not-null="true" />
+        </property>
+        <property name="FAlamat" type="string">
+            <column name="f_alamat" length="65535" not-null="true" />
+        </property>
+        <property name="FTlpn" type="string">
+            <column name="f_tlpn" length="16" not-null="true" />
+        </property>
+        <property name="FEmail" type="string">
+            <column name="f_email" length="25" not-null="true" />
+        </property>
+        <property name="FStatus" type="byte">
+            <column name="f_status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

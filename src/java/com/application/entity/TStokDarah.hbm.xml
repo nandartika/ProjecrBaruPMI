@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2019 3:13:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.application.entity.TStokDarah" table="t_stok_darah" catalog="_donordarah" optimistic-lock="version">
+        <id name="FIdTempat" type="int">
+            <column name="f_id_tempat" />
+            <generator class="assigned" />
+        </id>
+        <property name="FDarahA" type="int">
+            <column name="f_darah_A" not-null="true" />
+        </property>
+        <property name="FDarahB" type="int">
+            <column name="f_darah_B" not-null="true" />
+        </property>
+        <property name="FDarahO" type="int">
+            <column name="f_darah_O" not-null="true" />
+        </property>
+        <property name="FDarahAb" type="int">
+            <column name="f_darah_AB" not-null="true" />
+        </property>
+        <set name="THistoris" table="t_histori" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="f_id_tempat" not-null="true" />
+            </key>
+            <one-to-many class="com.application.entity.THistori" />
+        </set>
+    </class>
+</hibernate-mapping>

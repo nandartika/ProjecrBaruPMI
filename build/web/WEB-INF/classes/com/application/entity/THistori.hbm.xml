@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2019 3:13:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.application.entity.THistori" table="t_histori" catalog="_donordarah" optimistic-lock="version">
+        <id name="FIdHadiah" type="java.lang.Integer">
+            <column name="f_id_hadiah" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="TStokDarah" class="com.application.entity.TStokDarah" fetch="select">
+            <column name="f_id_tempat" not-null="true" />
+        </many-to-one>
+        <many-to-one name="TUser" class="com.application.entity.TUser" fetch="select">
+            <column name="f_id_user" not-null="true" />
+        </many-to-one>
+        <property name="FTanggal" type="date">
+            <column name="f_tanggal" length="10" not-null="true" />
+        </property>
+        <property name="FDebitPoin" type="int">
+            <column name="f_debit_poin" not-null="true" />
+        </property>
+        <property name="FKreditPoin" type="int">
+            <column name="f_kredit_poin" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

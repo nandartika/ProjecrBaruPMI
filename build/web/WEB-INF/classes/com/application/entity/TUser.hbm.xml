@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2019 3:13:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.application.entity.TUser" table="t_user" catalog="_donordarah" optimistic-lock="version">
+        <id name="FIdUser" type="java.lang.Integer">
+            <column name="f_id_user" />
+            <generator class="identity" />
+        </id>
+        <property name="FNamaUser" type="string">
+            <column name="f_nama_user" length="25" not-null="true" />
+        </property>
+        <property name="FNik" type="string">
+            <column name="f_nik" length="16" not-null="true" />
+        </property>
+        <property name="FGolonganDarah" type="string">
+            <column name="f_golongan_darah" length="3" />
+        </property>
+        <property name="FEmail" type="string">
+            <column name="f_email" length="35" not-null="true" />
+        </property>
+        <property name="FPassword" type="string">
+            <column name="f_password" length="35" not-null="true" />
+        </property>
+        <property name="FTglLahir" type="date">
+            <column name="f_tgl_lahir" length="10">
+                <comment>format: 2019-09-30</comment>
+            </column>
+        </property>
+        <property name="FJkelamin" type="string">
+            <column name="f_jkelamin" length="9" />
+        </property>
+        <property name="FPekerjaan" type="string">
+            <column name="f_pekerjaan" length="25" />
+        </property>
+        <property name="FNomorHp" type="string">
+            <column name="f_nomor_hp" length="16" not-null="true" />
+        </property>
+        <property name="FAlamat" type="string">
+            <column name="f_alamat" length="65535" />
+        </property>
+        <set name="THistoris" table="t_histori" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="f_id_user" not-null="true" />
+            </key>
+            <one-to-many class="com.application.entity.THistori" />
+        </set>
+    </class>
+</hibernate-mapping>
